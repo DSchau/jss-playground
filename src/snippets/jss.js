@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import jss from 'jss';
 import preset from 'jss-preset-default';
-import extend from 'jss-extend';
 import Logo from './logo';
 
 jss.setup(preset());
@@ -31,7 +30,7 @@ const styles = {
     width: 60,
     borderRadius: 60,
     backgroundColor: 'white',
-    boxShadow: '0 1px 6px rgba(0, 0, 0, 0.1)',
+    boxShadow: { x: 0, y: 1, blur: 6, color: 'rgba(0, 0, 0, 0.1)' },
     position: 'absolute',
     top: '1rem',
     left: '1rem',
@@ -96,15 +95,15 @@ const styles = {
     display: 'block',
     width: '100%',
     marginBottom: '1rem',
-    padding: '1.25rem 1rem',
+    padding: ['1.25rem', '1rem'],
     boxSizing: 'border-box',
     borderRadius: '0.25rem',
-    border: '1px solid transparent',
-    boxShadow: '0 1px 6px rgba(0, 0, 0, 0.1)',
-    ':focus': {
+    border: [1, 'solid', 'transparent'],
+    boxShadow: { x: 0, y: 1, blur: 6, color: 'rgba(0, 0, 0, 0.1)' },
+    '&:focus': {
       borderColor: '#6772e5',
       outline: 'none',
-      boxShadow: '0 1px 6px rgba(103, 114, 229, 0.5)'
+      boxShadow: { x: 0, y: 1, blur: 6, color: 'rgba(103, 114, 229, 0.5)' }
     }
   },
   submitButton: {
