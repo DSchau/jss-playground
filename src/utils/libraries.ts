@@ -42,14 +42,11 @@ export default code => {
   } else if (matches('jss')) {
     return Promise.all([
       import('jss'),
-      import('jss-preset-default'),
-      import('jss-extend')
-    ])
-      .then(([jss, preset, extend]) => ({
-        jss: (jss as any).default,
-        preset: preset.default,
-        extend: (extend as any).default
-      }));
+      import('jss-preset-default')
+    ]).then(([jss, preset]) => ({
+      jss: (jss as any).default,
+      preset: preset.default
+    }));
   }
   return Promise.resolve({});
 };

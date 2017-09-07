@@ -59,7 +59,6 @@
     "glamorous": "^4.7.0",
     "history": "^4.6.3",
     "jss": "^8.1.0",
-    "jss-extend": "^5.0.0",
     "jss-preset-default": "^3.0.0",
     "lodash.debounce": "^4.0.8",
     "lodash.kebabcase": "^4.1.1",

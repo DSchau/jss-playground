@@ -5,7 +5,6 @@ import extend from 'jss-extend';
 import Logo from './logo';
 
 jss.setup(preset());
-jss.setup(extend());
 
 const styles = {
   container: {
