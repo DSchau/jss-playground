@@ -14,6 +14,7 @@ A simple CodeMirror editor showcasing the various CSS in JS (or JSS) styling sol
 - [glamorous](./src/snippets/glamorous.js)
 - [jss](./src/snippets/jss.js)
 - [radium](./src/snippets/radium.js)
+- [react-jss](./src/snippets/react-jss.js)
 - [styled-components](./src/snippets/styled-components.js)
 <!-- AUTO-GENERATED-CONTENT:END (LIBRARIES) -->
 

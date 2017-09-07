@@ -47,6 +47,10 @@ export default code => {
       jss: (jss as any).default,
       preset: preset.default
     }));
+  } else if (matches('react-jss')) {
+    return import('react-jss').then(reactJSS => ({
+      injectSheet: (reactJSS as any).default
+    }));
   }
   return Promise.resolve({});
 };
