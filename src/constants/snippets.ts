@@ -5,11 +5,4 @@ import * as Cxs from '../snippets/cxs';
 import * as Radium from '../snippets/radium';
 import * as Jss from '../snippets/jss';
 
-export {
-  StyledComponents,
-  Glamorous,
-  Aphrodite,
-  Cxs,
-  Radium,
-  Jss
-};
+export { StyledComponents, Glamorous, Aphrodite, Cxs, Radium, Jss };
