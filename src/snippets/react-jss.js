@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import Logo from './logo';
 
 const styles = {
   container: {
@@ -26,7 +27,7 @@ const styles = {
     width: 60,
     borderRadius: 60,
     backgroundColor: 'white',
-    boxShadow: '0 1px 6px rgba(0, 0, 0, 0.1)',
+    boxShadow: { x: 0, y: 1, blur: 6, color: 'rgba(0, 0, 0, 0.1)' },
     position: 'absolute',
     top: '1rem',
     left: '1rem',
@@ -91,15 +92,15 @@ const styles = {
     display: 'block',
     width: '100%',
     marginBottom: '1rem',
-    padding: '1.25rem 1rem',
+    padding: ['1.25rem', '1rem'],
     boxSizing: 'border-box',
     borderRadius: '0.25rem',
-    border: '1px solid transparent',
-    boxShadow: '0 1px 6px rgba(0, 0, 0, 0.1)',
-    ':focus': {
+    border: [1, 'solid', 'transparent'],
+    boxShadow: { x: 0, y: 1, blur: 6, color: 'rgba(0, 0, 0, 0.1)' },
+    '&:focus': {
       borderColor: '#6772e5',
       outline: 'none',
-      boxShadow: '0 1px 6px rgba(103, 114, 229, 0.5)'
+      boxShadow: { x: 0, y: 1, blur: 6, color: 'rgba(103, 114, 229, 0.5)' }
     }
   }
 }
@@ -111,17 +112,17 @@ const buttonStyles = {
     color: 'white',
     border: 'none',
     width: '100%',
-    padding: '1.25rem 1rem',
+    padding: ['1.25rem', '1rem'],
     boxSizing: 'border-box',
     borderRadius: '0.25rem',
     textTransform: 'uppercase',
-    boxShadow: '0 1px 6px rgba(0, 0, 0, 0.1)',
+    boxShadow: { x: 0, y: 1, blur: 6, color: 'rgba(0, 0, 0, 0.1)' },
     marginTop: '1rem'
   }
 };
 
-const SubmitButton = injectSheet(buttonStyles)(({ classes, children }) => (
-  <button type="submit" className={classes.base}>{children}</button>
+const SubmitButton = injectSheet(buttonStyles)(({ classes, children, disabled }) => (
+  <button type="submit" className={classes.base} disabled={disabled}>{children}</button>
 ));
 
 class Login extends Component {
@@ -149,7 +150,6 @@ class Login extends Component {
 
   render() {
     const { classes } = this.props;
-    const { valid } = this.state;
 
     return (
       <main className={classes.container}>
@@ -179,7 +179,7 @@ class Login extends Component {
             placeholder="Phone number"
             onChange={this.handleInputChange('phoneNumber')}
           />
-          <SubmitButton disabled={!valid}>Submit</SubmitButton>
+          <SubmitButton disabled={!this.state.valid}>Submit</SubmitButton>
         </form>
       </main>
     );
