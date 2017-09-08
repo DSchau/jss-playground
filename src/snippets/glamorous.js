@@ -127,7 +127,7 @@ const SubmitButton = glamorous.button(
     marginTop: '1rem'
   },
   props => ({
-    backgroundColor: props.disabled ? '#BBB' : undefined
+    backgroundColor: props.disabled ? '#BBB' : null
   })
 ).withProps({type: 'submit'});
 
