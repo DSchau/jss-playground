@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled, { withTheme, StyledComponentClass } from 'styled-components';
+import glamorous, { withTheme } from 'glamorous';
 import { darken } from 'polished';
 import * as kebabCase from 'lodash.kebabcase';
 import * as queryString from 'query-string';
@@ -9,50 +9,58 @@ import * as DownIconElement from 'react-icons/lib/md/arrow-drop-down';
 import * as snippets from '../../constants/snippets';
 import { Theme, SANS_SERIF } from '../../style/';
 
-const HeaderContainer = styled.header`
-  flex: 0 0 auto;
-  height: 44px;
-  background-color: ${props => props.theme[props.theme.primary].base};
-  border-bottom: 1px solid ${props => darken(0.05, props.theme[props.theme.primary].base)};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 0.5rem;
-  z-index: 2;
-  transition: 250ms ease-in-out;
-  position: relative;
-`;
+const HeaderContainer = glamorous.header(
+  {
+    flex: '0 0 auto',
+    height: '44px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '0 0.5rem',
+    zIndex: 2,
+    transition: '250ms ease-in-out',
+    position: 'relative'
+  },
+  ({ theme }) => ({
+    backgroundColor: theme[theme.primary].base,
+    borderBottom: `1px solid ${darken(0.05, theme[theme.primary].base)}`
+  })
+);
 
-const SelectContainer = styled.div`
-  display: flex;
-  align-items: center;
-  position: relative;
-`;
+const SelectContainer = glamorous.div({
+  display: 'flex',
+  alignItems: 'center',
+  position: 'relative'
+});
 
-const Select = styled.select`
-  height: 32px;
-  background-color: transparent;
-  color: ${props => props.theme[props.theme.primary].text};
-  border: none;
-  box-shadow: none;
-  appearance: none;
-  font-size: 1.3rem;
-  padding-right: 1.3rem;
-  ${SANS_SERIF};
-`;
+const Select = glamorous.select(
+  {
+    height: '32px',
+    backgroundColor: 'transparent',
+    border: 'none',
+    boxShadow: 'none',
+    appearance: 'none',
+    fontSize: '1.3rem',
+    paddingRight: '1.3rem',
+  },
+  SANS_SERIF,
+  ({ theme }) => ({
+    color: theme[theme.primary].text
+  })
+);
 
-const DownIcon: StyledComponentClass<any, any> = styled(DownIconElement)`
-  position: absolute;
-  right: 0;
-`;
+const DownIcon: any = glamorous(DownIconElement)({
+  position: 'absolute',
+  right: '0'
+});
 
-const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-`;
+const IconContainer = glamorous.div({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end'
+});
 
-const Option = styled.option``;
+const Option = glamorous.option();
 
 interface Props {
   defaultSnippet: string;
@@ -72,7 +80,9 @@ class Header extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    const { library = this.props.defaultSnippet } = queryString.parse(location.search);
+    const { library = this.props.defaultSnippet } = queryString.parse(
+      location.search
+    );
     const snippet = snippets[library];
     if (snippet) {
       this.setState({
@@ -94,14 +104,14 @@ class Header extends React.Component<Props, State> {
       });
       this.props.onSelect(snippet);
     }
-  }
+  };
 
   handleColorSwitch = () => {
     if (this.props.onColorSwitch) {
       const { primary } = this.props;
       const theme = primary === 'dark' ? 'light' : 'dark';
       const path = this.getPath({
-        ...(queryString.parse(location.search) || {}),
+        ...queryString.parse(location.search) || {},
         dark: theme === 'dark'
       });
       history.replaceState({ path }, '', path);
@@ -117,7 +127,9 @@ class Header extends React.Component<Props, State> {
   }
 
   getPath(params) {
-    return `${location.origin}${location.pathname}?${queryString.stringify(params)}`;
+    return `${location.origin}${location.pathname}?${queryString.stringify(
+      params
+    )}`;
   }
 
   render() {
@@ -127,15 +139,20 @@ class Header extends React.Component<Props, State> {
       <HeaderContainer>
         <SelectContainer>
           <Select value={this.state.selected} onChange={this.handleChange}>
-            {
-              options
-                .map(option => <Option key={option} value={option}>{kebabCase(option)}</Option>)
-            }
+            {options.map(option =>
+              <Option key={option} value={option}>
+                {kebabCase(option)}
+              </Option>
+            )}
           </Select>
           <DownIcon color={textColor} size={20} />
         </SelectContainer>
         <IconContainer>
-          <InvertedIcon color={textColor} size={24} onClick={this.handleColorSwitch} />
+          <InvertedIcon
+            color={textColor}
+            size={24}
+            onClick={this.handleColorSwitch}
+          />
         </IconContainer>
       </HeaderContainer>
     );
