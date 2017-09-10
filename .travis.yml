@@ -14,5 +14,6 @@ deploy:
   bucket: css-in-js-playground.com
   local-dir: dist
   acl: public
+  detect_encoding: true
   on:
     branch: master
