@@ -41,8 +41,7 @@ const Link = glamorous.a({
   textDecorationSkip: 'ink'
 });
 
-interface Props extends ThemeProps {
-}
+interface Props extends ThemeProps {}
 
 function Footer(props: Props) {
   return (

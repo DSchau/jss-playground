@@ -50,7 +50,7 @@ interface Props extends ThemeProps {
   onUpdate(value: string): void;
 }
 
-interface State { }
+interface State {}
 
 class Editor extends React.Component<Props, State> {
   private editor: any;
