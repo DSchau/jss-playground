@@ -41,7 +41,7 @@ const Select = glamorous.select(
     boxShadow: 'none',
     appearance: 'none',
     fontSize: '1.3rem',
-    paddingRight: '1.3rem',
+    paddingRight: '1.3rem'
   },
   SANS_SERIF,
   ({ theme }) => ({

@@ -28,13 +28,12 @@ const Text = glamorous.h1(
     fontSize: '0.8rem',
     color: '${props => props.theme[props.theme.primary].text}',
     margin: 0,
-    padding: 0,
+    padding: 0
   },
   SERIF,
   ({ theme }) => ({
     color: theme[theme.primary].text
-  }),
-
+  })
 );
 
 const Link = glamorous.a({

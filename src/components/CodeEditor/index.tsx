@@ -11,28 +11,32 @@ import 'codemirror/theme/dracula.css';
 import * as debounce from 'lodash.debounce';
 
 import { Theme } from '../../style/theme';
+import { LARGE_UP } from '../../constants';
 
-const Container = glamorous.div({
-  display: 'flex',
-  width: '100%',
-  maxWidth: '100%',
-  height: '100%',
-  overflow: 'auto',
-  position: 'relative',
-  WebkitOverflowScrolling: 'touch',
-  zIndex: 2,
-  boxSizing: 'border-box',
-  borderStyle: 'solid',
-  borderWidth: 0,
-  borderBottomWidth: 1,
-  [`@media only screen and (min-width: 768px)`]: {
-    borderBottomWidth: 0,
-    borderRightWidth: 1,
-    height: 'auto'
-  }
-}, ({ theme }) => ({
-  borderColor: darken(0.15, theme[theme.primary].base)
-}));
+const Container = glamorous.div(
+  {
+    display: 'flex',
+    width: '100%',
+    maxWidth: '100%',
+    height: '100%',
+    overflow: 'auto',
+    position: 'relative',
+    WebkitOverflowScrolling: 'touch',
+    zIndex: 2,
+    boxSizing: 'border-box',
+    borderStyle: 'solid',
+    borderWidth: 0,
+    borderBottomWidth: 1,
+    [`@media only screen and (${LARGE_UP})`]: {
+      borderBottomWidth: 0,
+      borderRightWidth: 1,
+      height: 'auto'
+    }
+  },
+  ({ theme }) => ({
+    borderColor: darken(0.15, theme[theme.primary].base)
+  })
+);
 
 const TextArea = glamorous.textarea({
   width: '100%',

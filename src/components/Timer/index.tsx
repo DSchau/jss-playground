@@ -32,7 +32,7 @@ const Title = glamorous.h1(
     padding: 0,
     fontSize: 12,
     display: 'inline-block',
-    textTransform: 'uppercase',
+    textTransform: 'uppercase'
   },
   SANS_SERIF,
   ({ theme }) => ({
