@@ -2,9 +2,9 @@ import * as React from 'react';
 import glamorous from 'glamorous';
 import { darken } from 'polished';
 
-import { SANS_SERIF, SLIDE_UP } from '../../style';
+import { SANS_SERIF, SLIDE_UP, ThemeProps } from '../../style';
 
-const Container = glamorous.div(
+const Container = glamorous.div<ThemeProps>(
   {
     position: 'absolute',
     bottom: '7.5%',
@@ -26,7 +26,7 @@ const TimerContainer = glamorous.div({
   textAlign: 'center'
 });
 
-const Title = glamorous.h1(
+const Title = glamorous.h1<ThemeProps>(
   {
     margin: 0,
     padding: 0,
@@ -40,7 +40,7 @@ const Title = glamorous.h1(
   })
 );
 
-const Button = glamorous.button(
+const Button = glamorous.button<ThemeProps>(
   {
     backgroundColor: '${props => }',
     color: '${props => ',

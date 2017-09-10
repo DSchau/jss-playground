@@ -4,9 +4,9 @@ import { darken } from 'polished';
 
 import * as CodeIcon from 'react-icons/lib/md/code';
 
-import { SERIF } from '../../style';
+import { SERIF, Theme, ThemeProps } from '../../style';
 
-const FooterContainer = glamorous.footer(
+const FooterContainer = glamorous.footer<ThemeProps>(
   {
     display: 'flex',
     flexDirection: 'row',
@@ -22,7 +22,7 @@ const FooterContainer = glamorous.footer(
   })
 );
 
-const Text = glamorous.h1(
+const Text = glamorous.h1<ThemeProps>(
   {
     display: 'inline-block',
     fontSize: '0.8rem',
@@ -41,7 +41,8 @@ const Link = glamorous.a({
   textDecorationSkip: 'ink'
 });
 
-interface Props {}
+interface Props extends ThemeProps {
+}
 
 function Footer(props: Props) {
   return (

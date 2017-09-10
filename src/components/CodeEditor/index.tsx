@@ -10,10 +10,10 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/dracula.css';
 import * as debounce from 'lodash.debounce';
 
-import { Theme } from '../../style/theme';
+import { Theme, ThemeProps } from '../../style/theme';
 import { LARGE_UP } from '../../constants';
 
-const Container = glamorous.div(
+const Container = glamorous.div<ThemeProps>(
   {
     display: 'flex',
     width: '100%',
@@ -43,15 +43,14 @@ const TextArea = glamorous.textarea({
   border: 'none'
 });
 
-interface Props {
+interface Props extends ThemeProps {
   code: string;
   children?: any;
   className?: string;
   onUpdate(value: string): void;
-  theme?: Theme;
 }
 
-interface State {}
+interface State { }
 
 class Editor extends React.Component<Props, State> {
   private editor: any;

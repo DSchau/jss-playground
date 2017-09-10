@@ -7,9 +7,9 @@ import * as InvertedIcon from 'react-icons/lib/md/lightbulb-outline';
 import * as DownIconElement from 'react-icons/lib/md/arrow-drop-down';
 
 import * as snippets from '../../constants/snippets';
-import { Theme, SANS_SERIF } from '../../style/';
+import { Theme, ThemeProps, SANS_SERIF } from '../../style/';
 
-const HeaderContainer = glamorous.header(
+const HeaderContainer = glamorous.header<ThemeProps>(
   {
     flex: '0 0 auto',
     height: '44px',
@@ -33,7 +33,7 @@ const SelectContainer = glamorous.div({
   position: 'relative'
 });
 
-const Select = glamorous.select(
+const Select = glamorous.select<ThemeProps>(
   {
     height: '32px',
     backgroundColor: 'transparent',
@@ -49,7 +49,10 @@ const Select = glamorous.select(
   })
 );
 
-const DownIcon: any = glamorous(DownIconElement)({
+const DownIcon = glamorous(DownIconElement)<{
+  color: string;
+  size: number;
+}>({
   position: 'absolute',
   right: '0'
 });
@@ -62,12 +65,11 @@ const IconContainer = glamorous.div({
 
 const Option = glamorous.option();
 
-interface Props {
+interface Props extends ThemeProps {
   defaultSnippet: string;
   primary: string;
   onSelect: Function;
   onColorSwitch?: Function;
-  theme: Theme;
 }
 
 interface State {
@@ -159,4 +161,4 @@ class Header extends React.Component<Props, State> {
   }
 }
 
-export default withTheme(Header);
+export default (withTheme as any)(Header);
