@@ -98,7 +98,7 @@ class App extends React.Component<Props, State> {
   }
 }
 
-css.insert(`
+`
   html, body {
     font-family: sans-serif;
   }
@@ -114,6 +114,10 @@ css.insert(`
   .wf-active {
     font-family: 'Bitter', sans-serif;
   }
-`);
+`
+  .split(/\n{2}/)
+  .forEach(rule => {
+    css.insert(rule);
+  });
 
 export default withOffline(App);
