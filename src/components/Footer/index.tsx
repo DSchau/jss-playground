@@ -64,7 +64,7 @@ const StyledGithubIcon = glamorous(GithubIcon)<ThemeProps & {
 
 interface Props extends ThemeProps {}
 
-function Footer(props: Props) {
+export function Footer(props: Props) {
   return (
     <FooterContainer>
       <Text>
@@ -85,5 +85,3 @@ function Footer(props: Props) {
     </FooterContainer>
   );
 }
-
-export default Footer;

@@ -68,9 +68,14 @@ const DownIcon = (withTheme as any)(
 );
 
 const LightBulb = (withTheme as any)(
-  glamorous(InvertedIcon)<ThemeProps>(({ theme }) => ({
-    color: theme[theme.primary].text
-  }))
+  glamorous(InvertedIcon)<ThemeProps>(
+    {
+      cursor: 'pointer'
+    },
+    ({ theme }) => ({
+      color: theme[theme.primary].text
+    })
+  )
 );
 
 const IconContainer = glamorous.div({
@@ -92,7 +97,7 @@ interface State {
   selected: string;
 }
 
-class Header extends React.Component<Props, State> {
+export class Header extends React.Component<Props, State> {
   state = {
     selected: ''
   };
@@ -177,5 +182,3 @@ class Header extends React.Component<Props, State> {
     );
   }
 }
-
-export default Header;
