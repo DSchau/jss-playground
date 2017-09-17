@@ -12,7 +12,7 @@ import { Theme, ThemeProps, SANS_SERIF } from '../../style/';
 const HeaderContainer = glamorous.header<ThemeProps>(
   {
     flex: '0 0 auto',
-    height: '44px',
+    height: 44,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -35,7 +35,7 @@ const SelectContainer = glamorous.div({
 
 const Select = glamorous.select<ThemeProps>(
   {
-    height: '32px',
+    height: 32,
     backgroundColor: 'transparent',
     border: 'none',
     boxShadow: 'none',
