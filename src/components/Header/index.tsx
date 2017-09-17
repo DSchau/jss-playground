@@ -3,7 +3,7 @@ import glamorous, { withTheme } from 'glamorous';
 import { darken } from 'polished';
 import * as kebabCase from 'lodash.kebabcase';
 import * as queryString from 'query-string';
-import * as InvertedIcon from 'react-icons/lib/md/lightbulb-outline';
+import * as InvertedIcon from 'react-icons/lib/go/light-bulb';
 import * as DownIconElement from 'react-icons/lib/md/arrow-drop-down';
 
 import * as snippets from '../../constants/snippets';
