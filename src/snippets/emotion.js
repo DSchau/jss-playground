@@ -10,8 +10,6 @@ const Container = styled('main')`
   background-color: #f6f9fc;
 `;
 
-console.log(Container);
-
 const Header = styled('header')`
   display: flex;
   flex-direction: column;
