@@ -3,12 +3,10 @@ import glamorous, { ThemeProvider } from 'glamorous';
 import { css } from 'glamor';
 import queryString from 'query-string';
 
-import { initGA } from './utils/ga';
 import { CodeProvider, Footer, Header, Timer } from './components';
 
 import { GLOBAL, THEME } from './style';
 import { OfflineContainer } from './utils/offline';
-
 
 const Container = glamorous.main({
   display: 'flex',
@@ -25,12 +23,6 @@ interface State {
   theme: any;
 }
 
-declare global {
-  interface Window {
-    GA_INITIALIZED: any;
-  }
-}
-
 class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -40,13 +32,6 @@ class App extends React.Component<Props, State> {
       library: '',
       theme: THEME
     };
-  }
-
-  componentDidMount() {
-    if (!window.GA_INITIALIZED) {
-      initGA()
-      window.GA_INITIALIZED = true
-    }
   }
 
   componentWillMount() {
@@ -84,7 +69,7 @@ class App extends React.Component<Props, State> {
   render() {
     return (
       <OfflineContainer>
-        {updated =>
+        {updated => (
           <ThemeProvider theme={this.state.theme}>
             <Container>
               <Header
@@ -98,10 +83,12 @@ class App extends React.Component<Props, State> {
                 snippet={this.state.code}
               />
               <Footer />
-              {updated &&
-                <Timer duration={10000} onElapsed={this.handleTimerComplete} />}
+              {updated && (
+                <Timer duration={10000} onElapsed={this.handleTimerComplete} />
+              )}
             </Container>
-          </ThemeProvider>}
+          </ThemeProvider>
+        )}
       </OfflineContainer>
     );
   }
