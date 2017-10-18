@@ -78,6 +78,8 @@ export const getScopedImports = (
     return import('react-jss').then(reactJSS => ({
       injectSheet: (reactJSS as any).default
     }));
+  } else if (matches('linaria')) {
+    return import('linaria');
   }
   return Promise.resolve({});
 };
