@@ -50,7 +50,9 @@ const stripeBottom = css`
   background: linear-gradient(150deg, rgba(172, 240, 181, 0) 40%, #acf0b5 70%);
 `;
 
-const titleContainer = css`padding: 1rem;`;
+const titleContainer = css`
+  padding: 1rem;
+`;
 
 const title = css`
   color: white;

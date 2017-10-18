@@ -36,7 +36,7 @@ const buttonContainer = css`
 
 const button = css`
   display: block;
-  background-color: #BBB;
+  background-color: #bbb;
   color: white;
   border: none;
   width: 100%;
@@ -104,17 +104,17 @@ export default class Form extends Component {
           />
         ))}
         <div className={buttonContainer}>
-          <button
-            className={button}
-            onClick={this.handleReset()}
-          >
+          <button className={button} onClick={this.handleReset()}>
             Reset
           </button>
           <button
             type="submit"
             disabled={!this.state.valid}
             className={button}
-            style={{ backgroundColor: `${this.state.valid ? '#6772e5' : '#BBB'}` }}>
+            style={{
+              backgroundColor: `${this.state.valid ? '#6772e5' : '#BBB'}`
+            }}
+          >
             Submit
           </button>
         </div>
