@@ -9,7 +9,7 @@ const rootSelector = '#root';
 
 libraries
   .forEach(library => {
-    let browser = puppeteer.launch({args: ['--no-sandbox']});
+    let browser = puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
 
     afterAll(() => {
       browser.close();
