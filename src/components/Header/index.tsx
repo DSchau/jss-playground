@@ -15,6 +15,7 @@ import {
   Themes,
   ThemeProps,
   SANS_SERIF,
+  Z_INDEX_BASE,
   Z_INDEX_PREVIEW_CONTENT
 } from '../../style';
 import { Module } from '../../interfaces';
@@ -55,7 +56,8 @@ const Select = glamorous.select<ThemeProps>(
     appearance: 'none',
     fontSize: '1.3rem',
     paddingRight: '1.3rem',
-    outline: 'none'
+    outline: 'none',
+    zIndex: Z_INDEX_BASE
   },
   SANS_SERIF,
   ({ theme }) => ({
