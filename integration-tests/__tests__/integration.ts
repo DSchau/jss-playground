@@ -22,6 +22,7 @@ libraries
         await page.goto(`http://localhost:8000/?library=${library}`);
 
         await page.waitForSelector(rootSelector);
+        await page.waitFor(2000);
         const screenshot = await page.screenshot();
 
         (expect as any)(screenshot).toMatchImageSnapshot({

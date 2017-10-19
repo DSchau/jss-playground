@@ -3,3 +3,4 @@ dist
 
 .DS_Store
 
+integration-tests/**/__diff_output__
