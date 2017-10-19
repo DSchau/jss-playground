@@ -103,7 +103,11 @@ const IconContainer = glamorous.div({
   justifyContent: 'flex-end'
 });
 
-const Option = glamorous.option();
+const Option = (withTheme as any)(
+  glamorous.option<ThemeProps>(({ theme }) => ({
+    color: theme.light.text
+  }))
+);
 
 interface SelectData {
   library: string;
