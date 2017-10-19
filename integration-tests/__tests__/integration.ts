@@ -15,8 +15,12 @@ libraries
       browser.close();
     });
 
+    /*
+     * Credit to Ives van Hoorne
+     * https://github.com/CompuIves/codesandbox-client/blob/c9f9d9268ac45cb3ad7e3394dd1aa0995c6a323c/integration-tests/tests/sandboxes.test.js
+     */
     describe('CSS in JS Playground', () => {
-      test.concurrent(`it displays the ${library}'s library in the playground`, async () => {
+      test.concurrent(`displays '${library}' in the playground`, async () => {
         browser = await browser;
         const page = await browser.newPage();
         await page.goto(`http://localhost:8000/?library=${library}`);
