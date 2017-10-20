@@ -86,7 +86,7 @@
     "glamorous": "~4.9.7",
     "history": "~4.7.2",
     "jss": "~9.0.0",
-    "jss-preset-default": "~3.0.0",
+    "jss-preset-default": "~4.0.1",
     "linaria": "^0.1.4",
     "lodash.camelcase": "~4.3.0",
     "lodash.debounce": "~4.0.8",
@@ -103,7 +103,7 @@
     "react-icons": "~2.2.5",
     "react-jss": "~7.2.0",
     "styled-components": "~2.2.0",
-    "styled-jss": "~1.2.0",
+    "styled-jss": "~2.0.2",
     "webfontloader": "~1.6.28"
   },
   "lint-staged": {
