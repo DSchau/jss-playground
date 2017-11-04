@@ -89,7 +89,7 @@ export class Provider extends React.Component<Props, State> {
   // TODO: Revisit this algorithm and improve it
   // TODO: Remove items from query params that match local snippets
   handleSelect = ({ library, code }) => {
-    const { theme } = queryString.parse(location.search);
+    const { theme } = queryString.parse(window.location.search);
     this.setState(
       {
         library,
