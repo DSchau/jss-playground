@@ -7086,10 +7086,11 @@ styled-components@~2.2.0:
     stylis "^3.2.1"
     supports-color "^3.2.3"
 
-styled-jss@~2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/styled-jss/-/styled-jss-2.0.2.tgz#f2e4c76d1649fdbbda5a4318dc16eaa1e6e89bdd"
+styled-jss@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/styled-jss/-/styled-jss-2.1.0.tgz#b05dbf914ba46c9defc6a160336cb146bfe21719"
   dependencies:
+    is-observable "^0.2.0"
     is-react-prop "^1.0.0"
     jss "^9.0.0"
     jss-preset-default "^4.0.0"

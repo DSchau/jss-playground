@@ -111,7 +111,7 @@
     "react-icons": "~2.2.5",
     "react-jss": "~7.2.0",
     "styled-components": "~2.2.0",
-    "styled-jss": "~2.0.2",
+    "styled-jss": "~2.1.0",
     "webfontloader": "~1.6.28"
   },
   "lint-staged": {
