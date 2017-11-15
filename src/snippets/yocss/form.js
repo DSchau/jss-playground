@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import css from 'yocss';
 
-const styled = (Type, styles) =>
-  props =>
-    <Type
-      {...props}
-      className={[css(typeof styles === 'function' ? styles(props) : styles).toString()].concat(props.className || []).join(' ')}
-    />;
+const styled = (Type, styles) => props => (
+  <Type
+    {...props}
+    className={[
+      css(typeof styles === 'function' ? styles(props) : styles).toString()
+    ]
+      .concat(props.className || [])
+      .join(' ')}
+  />
+);
 
 const Form = styled('form', {
   display: 'flex',
@@ -120,8 +124,15 @@ export default class extends Component {
           />
         ))}
         <ButtonContainer>
-          <Button className={buttonClassName} onClick={this.handleReset()}>Reset</Button>
-          <SubmitButton className={buttonClassName} disabled={!this.state.valid}>Submit</SubmitButton>
+          <Button className={buttonClassName} onClick={this.handleReset()}>
+            Reset
+          </Button>
+          <SubmitButton
+            className={buttonClassName}
+            disabled={!this.state.valid}
+          >
+            Submit
+          </SubmitButton>
         </ButtonContainer>
       </Form>
     );

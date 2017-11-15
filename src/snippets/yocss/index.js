@@ -4,7 +4,9 @@ import css from 'yocss';
 import Form from './form';
 import Header from './header';
 
-const styled = (Type, styles) => props => <Type {...props} className={css(styles).toString()} />;
+const styled = (Type, styles) => props => (
+  <Type {...props} className={css(styles).toString()} />
+);
 
 const Container = styled('main', {
   display: 'flex',

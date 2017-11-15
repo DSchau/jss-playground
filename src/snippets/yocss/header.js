@@ -2,7 +2,12 @@ import React from 'react';
 import css from 'yocss';
 import Logo from 'react-icons/lib/go/rocket';
 
-const styled = (Type, styles) => props => <Type {...props} className={[css(styles).toString()].concat(props.className || []).join(' ')} />;
+const styled = (Type, styles) => props => (
+  <Type
+    {...props}
+    className={[css(styles).toString()].concat(props.className || []).join(' ')}
+  />
+);
 
 const Header = styled('header', {
   display: 'flex',
